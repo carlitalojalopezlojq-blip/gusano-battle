@@ -22,7 +22,7 @@ jobs:
       - name: Install Android SDK packages
         run: |
           SDKMANAGER=$(find "$ANDROID_HOME" -name sdkmanager -type f | head -1)
-          chmod +x "$SDKMANAGER"
+          sudo chmod +x "$SDKMANAGER"
           yes | "$SDKMANAGER" --licenses || true
           "$SDKMANAGER" "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 
